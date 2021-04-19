@@ -7,4 +7,7 @@ alias ssha='eval $(ssh-agent) && ssh-add'
 sudo apt update
 sudo apt install ansible
 
+ ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+ ansible all -m ping
+
 

@@ -31,12 +31,20 @@ wget -qO- ifconfig.me/ip
 193.123.39.205[
 
 sudo service httpd status
-/bin/systemctl status httpd.service
+sudo /bin/systemctl status/stop/start/restart httpd.service
 
+ansible-playbook -u opc 
 
 sudo firewall-cmd --list-all
 sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd --remove-service=http --permanent
 sudo firewall-cmd reload
 sudo firewall-cmd --list-all
 
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --zone=public --remove-port=80/tcp --permanent
+
+WHEN STMT: 
+when: ansible_distribution_version == "OracleLinux"
+when: ansible_distribution_version == "OracleLinux" and ansible_distribution_version == "CentOS"
+when: ansible_distribution_version in ["OracleLinux", "CentOS"]

@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: yum update packages
+    yum:
+      name: '*'
+      state: latest
+  
+
+  - name: install apache httpd service
+    yum:
+      name: httpd
+      state: absent

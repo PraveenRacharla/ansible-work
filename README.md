@@ -25,4 +25,18 @@ ansible all -u opc -m yum -a update_cache=true
 ansible all -u opc -m yum -a update_cache=yes --become
 ansible all -u opc -m yum -a "update_cache=yes state=latest"
 
+yum install net-tools
 
+wget -qO- ifconfig.me/ip
+193.123.39.205[
+
+sudo service httpd status
+/bin/systemctl status httpd.service
+
+
+sudo firewall-cmd --list-all
+sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd reload
+sudo firewall-cmd --list-all
+
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
